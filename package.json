@@ -1,0 +1,51 @@
+{
+  "name": "dgeni-diagrams-package",
+  "title": "Dgeni Diagrams",
+  "version": "0.0.1",
+  "description": "Mermaid diagrams for Dgeni documentation generator",
+  "main": "src/index.js",
+  "scripts": {
+    "cover": "istanbul cover jasmine-node -- .",
+    "test": "jasmine-node .",
+    "postinstall": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wingedfox/dgeni-diagrams-package.git"
+  },
+  "keywords": [
+    "dgeni",
+    "angular",
+    "angularjs",
+    "jsdoc",
+    "ngdoc",
+    "docs",
+    "documentation",
+    "diagram",
+    "flowchart",
+    "sequence",
+    "gantt",
+    "mermaid",
+    "processor",
+    "generator"
+  ],
+  "author": "Ilya WingedFox Lebedev <ilya@lebedev.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wingedfox/dgeni-diagrams-package/issues"
+  },
+  "homepage": "https://github.com/wingedfox/dgeni-diagrams-package#readme",
+  "dependencies": {
+    "dgeni": "~0.4.2",
+    "dgeni-packages": "~0.11.1",
+    "lodash": "~4.0.0",
+    "mermaid": "~0.5.8",
+    "phantomjs": "~1.9.0",
+    "q": "~1.4.1",
+    "sync": "~0.2.5"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.0",
+    "jasmine-node": "^2.0.0"
+  }
+}
