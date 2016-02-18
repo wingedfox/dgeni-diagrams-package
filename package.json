@@ -1,7 +1,7 @@
 {
   "name": "dgeni-diagrams-package",
   "title": "Dgeni Diagrams",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Mermaid diagrams for Dgeni documentation generator",
   "main": "src/index.js",
   "scripts": {
@@ -41,6 +41,7 @@
     "mermaid": "~0.5.8",
     "phantomjs": "~1.9.0",
     "q": "~1.4.1",
+    "stringmap": "~0.2.2",
     "sync": "~0.2.5"
   },
   "devDependencies": {
