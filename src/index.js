@@ -1,4 +1,4 @@
-var path = require('canonical-path');
+var path = require('path');
 var packagePath = __dirname;
 var Package = require('dgeni').Package;
 

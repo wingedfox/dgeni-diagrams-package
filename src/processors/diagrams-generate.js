@@ -1,7 +1,7 @@
 var os = require('os');
 var fs = require('fs');
 var _ = require('lodash');
-var path = require('canonical-path');
+var path = require('path');
 var mermaid = require('mermaid/lib/');
 var mermaidCss = fs.readFileSync(path.join(path.dirname(require.resolve('mermaid')), '../dist/mermaid.forest.css'));
 //var phantomjs = require('phantomjs-prebuilt');
