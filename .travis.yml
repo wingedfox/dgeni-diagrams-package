@@ -5,7 +5,7 @@ node_js:
   - "stable"
   - "4.3.1"
 
-script: "npm run cover"
+script: "npm run travis"
 
 cache:
   directories:
