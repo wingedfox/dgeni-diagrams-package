@@ -23,4 +23,8 @@ describe("diagramInlineTagDef", function() {
   it("should lookup the diagramDoc identified in the tag description and return its renderedContent", function() {
     expect(tagDef.handler({}, 'diagram', 'some-diagram')).toEqual('<div class="diagram mermaid">The rendered content of the some-diagram diagram</div>');
   });
+
+  it("should throw an Error if diagram does not exists", function() {
+    expect(function(){tagDef.handler({}, 'diagram', 'no-diagram')}).toThrowError(/No diagram exists with id "no-diagram"/);
+  });
 });

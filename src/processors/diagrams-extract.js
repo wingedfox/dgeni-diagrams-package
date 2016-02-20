@@ -8,29 +8,26 @@ var ATTRIBUTE_REGEX = /(?:^\s*|\s+)([^=]+)\s*=\s*(?:(["'])(.*?))\2/g; // "
  * @description
  * Search the documentation for diagrams that need to be extracted
  */
-module.exports = function extractDiagramsProcessor(log, diagramMap, trimIndentation, createDocMessage) {
+module.exports = function extractDiagramsProcessor(log, diagramMap) {
   return {
     $runAfter: ['files-read'],
     $runBefore: ['parsing-tags'],
     $process: function(docs) {
       docs.forEach(function(doc) {
-        try {
-          doc.content = doc.content.replace(DIAGRAM_REGEX, function processDiagram(match, attributeText, diagramText) {
 
-            var diagram = extractAttributes(attributeText);
-            var id = uniqueName(diagramMap, diagram.name ? 'diagram-' + diagram.name : 'diagram');
-            diagram.id = id;
-            diagram.content = diagramText;
+        doc.content = doc.content.replace(DIAGRAM_REGEX, function processDiagram(match, attributeText, diagramText) {
 
-            // store the diagram information for later
-            log.debug('Storing diagram: %s',id);
-            diagramMap.set(id, diagram);
+          var diagram = extractAttributes(attributeText);
+          var id = uniqueName(diagramMap, diagram.name ? 'diagram-' + diagram.name : 'diagram');
+          diagram.id = id;
+          diagram.content = diagramText;
 
-            return '{@diagram ' + id + '}';
-          });
-        } catch(error) {
-          throw new Error(createDocMessage('Failed to parse diagrams', doc, error));
-        }
+          // store the diagram information for later
+          log.debug('Storing diagram: %s',id);
+          diagramMap.set(id, diagram);
+
+          return '{@diagram ' + id + '}';
+        });
       });
     }
   };

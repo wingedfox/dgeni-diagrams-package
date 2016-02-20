@@ -25,12 +25,16 @@ describe("extractDiagramsProcessor", function() {
       {
         content: 'some text <diagram name="bar" >graph TB\na-->b</diagram> more text\n'
       },
+      {
+        content: 'some text <diagram name="bar" >graph LR\ne</diagram> more text\n'
+      }
     ];
     processor.$process(docs);
     expect(diagramMap.get('diagram-foo')).toEqual(jasmine.objectContaining({ name:'foo', id: 'diagram-foo', content: 'graph TB\nfoo' }));
     expect(diagramMap.get('diagram-bar')).toEqual(jasmine.objectContaining({ name:'bar', id: 'diagram-bar', content: 'graph TB\nbar-->foo' }));
     expect(diagramMap.get('diagram')).toEqual(jasmine.objectContaining({ id: 'diagram', content: 'gantt' }));
     expect(diagramMap.get('diagram-bar1')).toEqual(jasmine.objectContaining({ name: 'bar', id: 'diagram-bar1', content: 'graph TB\na-->b' }));
+    expect(diagramMap.get('diagram-bar2')).toEqual(jasmine.objectContaining({ name: 'bar', id: 'diagram-bar2', content: 'graph LR\ne' }));
   });
 
 

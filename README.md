@@ -4,6 +4,8 @@
 [![NPM](https://img.shields.io/npm/v/dgeni-diagrams-package.svg)](https://www.npmjs.com/package/dgeni-diagrams-package)
 [![Travis](https://img.shields.io/travis/wingedfox/dgeni-diagrams-package.svg)](https://travis-ci.org/wingedfox/dgeni-diagrams-package)
 [![Coveralls](https://img.shields.io/coveralls/wingedfox/dgeni-diagrams-package.svg)](https://coveralls.io/github/wingedfox/dgeni-diagrams-package)
+[![Dependency Status](https://david-dm.org/wingedfox/dgeni-diagrams-package.svg)](https://david-dm.org/wingedfox/dgeni-diagrams-package)
+[![devDependency Status](https://david-dm.org/wingedfox/dgeni-diagrams-package/dev-status.svg)](https://david-dm.org/wingedfox/dgeni-diagrams-package#info=devDependencies)
 
 ## How to use
 ### Install

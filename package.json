@@ -5,7 +5,9 @@
   "description": "Mermaid diagrams for Dgeni documentation generator",
   "main": "src/index.js",
   "scripts": {
+    "clean": "rimraf ./coverage",
     "cover": "istanbul cover jasmine-node -- .",
+    "travis": "istanbul cover jasmine-node -- . && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "test": "jasmine-node ."
   },
   "repository": {
@@ -37,7 +39,7 @@
   "dependencies": {
     "dgeni": "~0.4.2",
     "dgeni-packages": "~0.11.1",
-    "lodash": "~4.0.0",
+    "lodash": "~4.5.0",
     "mermaid": "~0.5.8",
     "phantomjs": "~1.9.0",
     "q": "~1.4.1",
@@ -45,7 +47,9 @@
     "sync": "~0.2.5"
   },
   "devDependencies": {
-    "istanbul": "^0.4.0",
-    "jasmine-node": "^2.0.0"
+    "coveralls": "~2.11.6",
+    "istanbul": "~0.4.0",
+    "jasmine-node": "~2.0.0",
+    "rimraf": "^2.5.2"
   }
 }
